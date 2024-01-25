@@ -56,7 +56,7 @@ public class WishlistDataServiceImpl implements WishlistDataService {
             try {
                 int variantIDQty = wishlistItem.getVariantid_qty();
                 String productId = wishlistItem.getProductId();
-                String productApiUrl = "http://localhost:8085/multikart/v1/product/byvariantid";
+                String productApiUrl = "https://product.prod.psi.initz.run/multikart/v1/product/byvariantid";
 
                 UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(productApiUrl)
                         .queryParam("productId", productId)
@@ -192,7 +192,7 @@ public class WishlistDataServiceImpl implements WishlistDataService {
 
             for (Wishlist.Wishlist_item wishlistItem : wishlist.getWishlistItems()) {
                 //add to cart for each wishlisted item
-                //api for adding product to cart http://localhost:8081/multikart/v1/cart/add
+                //api for adding product to cart https://cart.prod.psi.initz.run/multikart/v1/cart/add
                 // Create a new cart item from the wishlist item
                 Cart.CartItem cartItem = new Cart.CartItem();
                 cartItem.setVariantid_qty(wishlistItem.getVariantid_qty());
@@ -212,7 +212,7 @@ public class WishlistDataServiceImpl implements WishlistDataService {
             requestBody.setUserid(userId);
 
             // Call the API to add cart items
-            String apiUrl = "http://localhost:8081/multikart/v1/cart/add";
+            String apiUrl = "https://cart.prod.psi.initz.run/multikart/v1/cart/add";
 
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
