@@ -212,7 +212,7 @@ public class WishlistDataServiceImpl implements WishlistDataService {
             requestBody.setUserid(userId);
 
             // Call the API to add cart items
-            String apiUrl = "https://cart.prod.psi.initz.run/multikart/v1/cart/add";
+            String apiUrl = "https://cartt.prod.psi.initz.run/multikart/v1/cart/add";
 
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
